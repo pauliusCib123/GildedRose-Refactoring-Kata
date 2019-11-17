@@ -13,19 +13,18 @@ namespace csharp {
       new Item {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 20},
       new Item {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 49},
       new Item {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5,  Quality = 49},
-      new Item {Name = "Conjured Mana Cake",                        SellIn = 3,  Quality = 6}// this conjured item does not work properly yet
+      new Item {Name = "Conjured Mana Cake",                        SellIn = 3,  Quality = 6}
     };
     
     
     public static void Main(string[] args) {
       Console.WriteLine("OMGHAI!");
 
-      var items = getItemsList();
-      var app = new GildedRose(items);
+      var app = new GildedRose(getItemsList());
       for (var i = 0; i < 31; i++) {
         Console.WriteLine("-------- day " + i + " --------");
         Console.WriteLine($"{"Name",-50} {"SellIn",4} {"Quality",4}");
-        foreach (var item in items) {
+        foreach (var item in app.items) {
           Console.WriteLine(item);
         }
 
